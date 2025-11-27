@@ -1,0 +1,31 @@
+{
+  "target": "https://example.com",
+  "timestamp": "2025-11-27T00:00:00Z",
+  "headers": {
+    "server": "nginx",
+    "content-type": "text/html; charset=UTF-8"
+  },
+  "security_checks": [
+    {
+      "header": "Strict-Transport-Security",
+      "present": true,
+      "advice": "Consider setting Strict-Transport-Security (HSTS (enforce HTTPS))"
+    },
+    {
+      "header": "Content-Security-Policy",
+      "present": false,
+      "advice": "Consider setting Content-Security-Policy (CSP (mitigate XSS))"
+    }
+  ],
+  "header_coverage_percent": 50,
+  "robots": {
+    "found": true,
+    "content": "User-agent: *\nDisallow: /private"
+  },
+  "tls": {
+    "expiry": "Dec 31 23:59:59 2026 GMT",
+    "days_left": 400
+  },
+  "cookies": [],
+  "risk_score": 72
+}

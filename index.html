@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VulnLite — Web Security Analyzer</title>
+
+    <!-- Google Font + Bootstrap 5 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+  <body class="bg-gradient">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <i class="bi bi-shield-lock-fill me-2" style="font-size:22px"></i>
+          <span class="fw-bold">VulnLite</span>
+        </a>
+        <div class="ms-auto text-white">Educational Security Analyzer</div>
+      </div>
+    </nav>
+
+    <main class="container py-5">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card shadow p-3">
+            <h5 class="mb-2">Scan a Website</h5>
+            <p class="text-muted small">Non-invasive checks: headers, TLS, robots, cookies.</p>
+            <div class="mb-3">
+              <input id="urlInput" class="form-control form-control-lg" placeholder="example.com or https://example.com">
+            </div>
+            <div class="d-grid gap-2 d-md-flex">
+              <button id="scanBtn" class="btn btn-primary btn-lg"><i class="bi bi-search me-2"></i>Scan</button>
+              <button id="sampleBtn" class="btn btn-outline-secondary btn-lg"><i class="bi bi-file-earmark-text me-2"></i>Load Sample</button>
+            </div>
+            <div id="status" class="mt-3 small text-muted"></div>
+
+            <hr class="my-3">
+
+            <div class="small text-muted">Export</div>
+            <div class="d-flex gap-2 mt-2">
+              <button id="exportPDF" class="btn btn-outline-success btn-sm"><i class="bi bi-download me-1"></i>Export PDF</button>
+              <button id="copyJSON" class="btn btn-outline-info btn-sm"><i class="bi bi-clipboard2 me-1"></i>Copy JSON</button>
+            </div>
+          </div>
+
+          <div class="card mt-3 shadow p-3">
+            <h6 class="mb-2">How to present</h6>
+            <ul class="small mb-0">
+              <li>Show dashboard + PDF export</li>
+              <li>Explain safe checks & results</li>
+              <li>Mention security advice from the report</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="card shadow p-3">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="mb-0">Report</h5>
+              <div class="text-end small text-muted">Interactive + printable</div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-md-4">
+                <div class="p-3 bg-white rounded shadow-sm">
+                  <div class="d-flex align-items-center">
+                    <div class="me-3">
+                      <i class="bi bi-speedometer2 fs-3 text-primary"></i>
+                    </div>
+                    <div>
+                      <div class="small text-muted">Risk Score</div>
+                      <div id="riskScore" class="h3 mb-0">—</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <canvas id="coverageChart" height="120"></canvas>
+              </div>
+            </div>
+
+            <hr>
+
+            <div id="reportJSON" class="p-3 bg-light rounded" style="max-height:420px; overflow:auto; white-space:pre-wrap;">
+              <small class="text-muted">No report yet. Click Scan.</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="text-center py-4 small text-muted">
+      VulnLite — For learning & presentations. Do not run without permission.
+    </footer>
+
+    <!-- libs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>

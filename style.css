@@ -1,0 +1,11 @@
+:root{
+  --bg1: linear-gradient(135deg,#0f172a 0%, #041426 100%);
+}
+body{ font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--bg1); color:#e6eef8; }
+.navbar-brand { font-size: 1.1rem; }
+.card { border-radius: 12px; }
+.bg-light { background: rgba(255,255,255,0.03) !important; color: #dbeafe; }
+input.form-control { background: rgba(255,255,255,0.03); color: #e6eef8; border: 1px solid rgba(255,255,255,0.06); }
+.btn-primary { background: linear-gradient(90deg,#0ea5a4,#3b82f6); border: none; box-shadow: 0 6px 18px rgba(59,130,246,0.18); }
+small.text-muted { color: #9fb3d9 !important; }
+#reportJSON { background: rgba(255,255,255,0.02); color: #dbeafe; }
